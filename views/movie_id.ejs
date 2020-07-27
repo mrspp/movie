@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% data.forEach(element => { %>
+    <iframe src="https://database.gdriveplayer.io/player.php?imdb=<%= element.imdb %>" 
+        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 600px;"
+        title="W3Schools Free Online Web Tutorials">
+    </iframe>
+    <!-- <img src="<%= element.poster %> " alt="" style="width:100px; height:150px; text-align:center"> -->
+    <li style="text-align:center">
+        <%= element.title %>
+    </li>
+    <% }) %>
+
+</body>
+
+</html>

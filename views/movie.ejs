@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <% data.forEach(element => { %>
+    <a href="/movie/<%= element.imdb %> ">
+        <img src="<%= element.poster %> " alt="" style="width: 100px; height: 150px; text-align:center">
+    </a>
+    <li>
+        <a href="/movie/<%= element.imdb %>">
+            <%= element.title %>
+        </a>
+    </li>
+    <% }) %>
+
+    <h2>Simple Pagination</h2>
+
+    <div class="pagination">
+        <a href="/movie/?page=1">&laquo;</a>
+        <% for( let index = 1; index <= 167; index++ ) { %>
+        <a href="/movie/?page=<%= index %>"><%= index %> </a>
+        <% } %>
+        <a href="/movie/?page=167">&raquo;</a>
+    </div>
+    <h1>The iframe element</h1>
+</body>
+
+</html>
